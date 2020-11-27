@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -6,25 +6,18 @@ app = Flask(__name__)
 def index():
 
     #service2
-    uppercase_request = requests.get('http://service2:5001/upper')
-    uppercase = upletters_request.json()['uppercase']
-
-    lowercase_request = requests.get('http://service2:5001/lower', json={"uppercase": uppercase})
-    lowercase = lowercase_request.json()['lowercase']
+    letters = requests.get("http://localhost:5001/letters")
 
     #service3
-    six_digit_request = requests.get('http://service3:5002/six')
-    six_digit = six_digit_request.json()['six_digit']
+    numbers = requests.get('http://service3:5002/numbers')
 
-    special_num = requests.get('http://service3:/special')
+        #special_num = requests.get('http://service3:/special')
 
     #service4
-    prize1 =
-    prize2 =
-    prize3 =
+    prize =
+    
 
-    return render_template('index', uppercase=uppercase, lowercase=lowercase, six_digit=six_digit, special_num=special_num)
-
+    return render_template('index', letters=letters.text)
 
 
 if __name__='__main__':
