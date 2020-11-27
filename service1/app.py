@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import requests
 
 app = Flask(__name__)
 
@@ -14,8 +15,8 @@ def index():
     prize = requests.get("http://localhost:5003/prize", data=ticket.text)
     
 
-    return render_template('index', combo=ticket.text, prize=prize.text)
+    return render_template('index', ticket=ticket.text, prize=prize.text)
 
 
-if __name__='__main__':
+if __name__=='__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
