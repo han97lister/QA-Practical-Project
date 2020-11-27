@@ -5,19 +5,16 @@ app = Flask(__name__)
 @app.route('/', methods=['GET'])
 def index():
 
-    #service2
     letters = requests.get("http://localhost:5001/letters")
-
-    #service3
     numbers = requests.get('http://service3:5002/numbers')
 
-        #special_num = requests.get('http://service3:/special')
-
+    ticket = numbers + letters
+    
     #service4
-    prize =
+    prize = requests.get("http://localhost:5003/prize", data=ticket.text)
     
 
-    return render_template('index', letters=letters.text)
+    return render_template('index', combo=ticket.text, prize=prize.text)
 
 
 if __name__='__main__':
