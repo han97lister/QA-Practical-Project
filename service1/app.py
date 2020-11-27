@@ -9,10 +9,10 @@ def index():
     letters = requests.get("http://localhost:5001/letters")
     numbers = requests.get('http://service3:5002/numbers')
 
-    ticket = numbers + letters
+    ticket = str(numbers + letters)
     
     #service4
-    prize = requests.get("http://localhost:5003/prize", data=ticket.text)
+    prize = requests.post("http://localhost:5003/prize", data=ticket.text)
     
 
     return render_template('index', ticket=ticket.text, prize=prize.text)
