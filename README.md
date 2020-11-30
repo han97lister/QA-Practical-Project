@@ -1,2 +1,6 @@
 # QA-Practical-Project
-Lottery based project
+## **Lottery App**
+
+### **Resources**
+
+
