@@ -7,16 +7,12 @@ app = Flask(__name__)
 def index():
 
     letters = requests.get("http://localhost:5001/letters")
-    numbers = requests.get('http://service3:5002/numbers')
-
-    ticket = str(numbers + letters)
+    numbers = requests.get('http://localhost:5002/number')
+    ticket = letters.text+str(numbers.text)
     
-    #service4
-    prize = requests.post("http://localhost:5003/prize", data=ticket.text)
-    
+    prize = requests.post('http://localhost:5003/prize', data=ticket)
 
-    return render_template('index', ticket=ticket.text, prize=prize.text)
-
+    return render_template('index.html', ticket=ticket, prize=prize.text)
 
 if __name__=='__main__':
     app.run(debug=True, port=5000, host='0.0.0.0')
