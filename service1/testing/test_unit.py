@@ -18,4 +18,5 @@ class TestResponse( TestBase ) :
                 p.return_value.text = "Nothing, please try again"
 
                 response = self.client.get(url_for("index"))
-                self.assertEqual( response.status_code, 200 )
+                self.assertIn( b'ABC13579', response.data )
+                self.assertIn( b'Nothing, please try again', response.data )
