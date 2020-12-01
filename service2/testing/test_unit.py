@@ -11,6 +11,7 @@ class TestBase( TestCase ):
 class TestApp( TestBase ):
 
     def test_letters(self):
+        uppercase = [b"ABC", b"DEF", b"GHI", b"JKL", b"MNO"]
         response = self.client.get( url_for('letters') )
         self.assertEqual( response.status_code, 200 )
-        #self.assertIn( b'uppercase', response.data )
+        self.assertIn( response.data, uppercase )
