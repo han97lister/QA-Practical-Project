@@ -2,7 +2,7 @@ import unittest
 import requests
 
 from unittest.mock import patch
-from flask import url_for
+from flask import url_for, request
 from flask_testing import TestCase
 
 from service4.app import app
@@ -13,23 +13,30 @@ class TestBase( TestCase ) :
 
 class TestApp( TestBase ) :
 
-    def test_get_ticket(self):
+    def test_ticket_won_200(self):
 
-        response = self.client.get( url_for('prize') )
-        self.assertEqual( response.status_code, 200 )
-        self.assertIn( b'ticket', response.data ) 
+        response = self.client.post(
+            url_for('prize'),
+            data='GHI09672',
+            follow_redirects=True
+        )
+        self.assertIn( "Congratulations! You have won £200", response.data ) 
     
-   # def test_post_prize(self):
+    def test_ticket_won_100(self):
 
-    #    response = self.client.post( url_for('prize') )
-    #    self.assertEqual( response.status_code, 200 )
-    #    self.assertIn( b'DEF09672', response.data )
-    #    self.assertIn( b'Nothing, please try again', response.data )
+        response = self.client.post(
+            url_for('prize'),
+            data='ABC24680',
+           follow_redirects=True
+        )
+        self.assertIn( "Congratulations! You have won £100", response.data )
     
-    def test_get_ticket(self):
-        with patch( 'requests.post' ) as g:
-            g.return_value.text = "GHI09672"
+    def test_ticket_won_nothing(self):
 
-            response = self.client.post(url_for('prize'))
-            self.assertIn(b'Congratulations, You have won £200', response.data)
-            self.assertEqual(response.status_code, 200)
+        response = self.client.post(
+            url_for('prize'),
+            data='DEF09672',
+           follow_redirects=True
+        )
+        self.assertIn( "Nothing, please try again", response.data )
+    
