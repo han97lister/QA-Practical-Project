@@ -37,4 +37,4 @@ As you can see I only have the one table but this table stores each ticket with 
 ### **Author**
 Hannah Lister-Sims
 
-[erd][Imgur](https://i.imgur.com/pXvji8l.png?1)
+[erd]:https://i.imgur.com/pXvji8l.png?1
