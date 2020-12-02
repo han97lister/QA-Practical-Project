@@ -27,6 +27,7 @@
 
 ### **Architecture**
 #### **Architecture Plan**
+Architecture plans are useful as they allow you to initially visualise your end project without going into much detail. As my project progressed, my architecture plan changed slightly and evolved into my final end structure. Below you can see the evolution:    
 
 #### **ERD**
 I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.  
