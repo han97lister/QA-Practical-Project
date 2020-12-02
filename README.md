@@ -4,8 +4,8 @@
 ### **Resources**
 
 * Presentation:
-* Trello Board:
-* Website: https://trello.com/b/JbWnQiQF/qa-practical-project
+* Trello Board:https://trello.com/b/JbWnQiQF/qa-practical-project
+* Website: 
 
 ### **Contents**
 * [Brief](#brief)
