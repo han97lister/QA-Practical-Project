@@ -29,7 +29,7 @@
 #### **Architecture Plan**
 
 #### **ERD**
-I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.
+I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.  
 ![erd][erd]  
 As you can see I only have the one table but this table stores each ticket with it's allocated prize and gives it an identity number so that it stays unique.
 
