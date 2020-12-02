@@ -1,2 +1,4 @@
 flask
-random
+flask-testing
+pytest
+pytest-cov
