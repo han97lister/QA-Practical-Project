@@ -9,9 +9,9 @@ def prize():
     ticket = request.data.decode('utf-8')
 
     if ticket[0] == 'G':
-        prize = "Congratulations! You have won £200"
+        prize = "Congratulations, you have won 200 pounds"
     elif ticket[-2] == '8':
-        prize = "Congratulations! You have won £100"
+        prize = "Congratulations, you have won 100 pounds"
     else:
         prize = "Nothing, please try again"
     

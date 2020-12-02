@@ -20,7 +20,7 @@ class TestApp( TestBase ) :
             data='GHI09672',
             follow_redirects=True
         )
-        self.assertIn( "Congratulations! You have won £200", response.data ) 
+        self.assertIn( b'Congratulations, You have won 200', response.data ) 
     
     def test_ticket_won_100(self):
 
@@ -29,7 +29,7 @@ class TestApp( TestBase ) :
             data='ABC24680',
            follow_redirects=True
         )
-        self.assertIn( "Congratulations! You have won £100", response.data )
+        self.assertIn( b"Congratulations, You have won 100", response.data )
     
     def test_ticket_won_nothing(self):
 
@@ -38,5 +38,5 @@ class TestApp( TestBase ) :
             data='DEF09672',
            follow_redirects=True
         )
-        self.assertIn( "Nothing, please try again", response.data )
+        self.assertIn( b"Nothing, please try again", response.data )
     

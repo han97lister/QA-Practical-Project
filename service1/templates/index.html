@@ -5,6 +5,7 @@
         <h2>You're lottery ticket is {{ ticket }}</h2>
         <h2>You're prize is {{ prize }}</h2>
         <h3>For a new ticket press refresh</h3>
-            <button>Refresh</button>
+            <form action="{{ url_for('index') }}">
+                <button>Refresh</button></form>
     </body>
 </html>
