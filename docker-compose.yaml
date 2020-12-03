@@ -3,6 +3,8 @@ services:
   service1:
     build: ./service1/.
     image: h15t3r5im5/service1:service1
+    deploy:
+      replicas: 3
     ports:
     - target: 5000
       published: 5000
@@ -10,18 +12,24 @@ services:
   service2:
     build: ./service2/.
     image: h15t3r5im5/service2:service2
+    deploy:
+      replicas: 3
     ports:
     - target: 5001
       protocol: tcp
   service3:
     build: ./service3/.
     image: h15t3r5im5/service3:service3
+    deploy:
+      replicas: 3
     ports:
     - target: 5002
       protocol: tcp
   service4:
     build: ./service4/.
     image: h15t3r5im5/service4:service4
+    deploy:
+      replicas: 3
     ports:
     - target: 5003
       protocol: tcp   
