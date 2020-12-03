@@ -9,6 +9,9 @@ services:
     - target: 5000
       published: 5000
       protocol: tcp
+    environment:
+      DB_URI: DB_URI
+      SECRET_KEY: SECRET_KEY
   service2:
     build: ./service2/.
     image: h15t3r5im5/service2:service2
