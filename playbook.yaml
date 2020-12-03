@@ -1,0 +1,10 @@
+- hosts: manager
+  roles:
+  - docker  
+  - swarm-manager
+
+- hosts: workers
+  become: yes
+  roles:
+  - docker  
+  - swarm-workers
