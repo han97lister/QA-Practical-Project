@@ -3,7 +3,7 @@ import requests
 from application import app, db
 from application.models import Prize
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
 
     letters = requests.get("http://localhost:5001/letters")
@@ -12,4 +12,4 @@ def index():
     
     prize = requests.post('http://localhost:5003/prize', data=ticket)
 
-    return render_template('index.html', ticket=ticket, prize=prize.text)
+    return render_template('index.html', letters=letters.text, numbers=numbers.text, ticket=ticket, prize=prize.text)
