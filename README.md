@@ -22,6 +22,7 @@
 * [Author](#author)
 
 ### **Brief**
+For this project, I had the objective of creating a service-orientated application that is composed of four services which all communicate with each other. I also needed to implement changes to each service without disrupting the user experience in order to show automated updates. A key focus to this project was the deployment using containerisation and an orchestration tool; which enables applications to go up to the service level, allowing scalability and thus better handle more traffic.
 
 ### **My Approach**
 
