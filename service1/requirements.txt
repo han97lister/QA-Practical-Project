@@ -5,3 +5,4 @@ pytest-cov
 flask-testing
 Flask-SQLAlchemy==2.4.4
 pymysql
+gunicorn
