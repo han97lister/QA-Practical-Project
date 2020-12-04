@@ -1,14 +1,14 @@
-[manager]
-swarm-manager
+[master]
+swarm-master
 
 [workers]
 swarm-worker1
 swarm-worker2
 
-[manager:vars]
+[master:vars]
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=/home/Hannah/.ssh/ansible_id_rsa
 
 [workers:vars]
 ansible_ssh_common_args='-o StrictHostKeyChecking=no'
-ansible_python_interpreter=/usr/bin/python3
+ansible_ssh_private_key_file=/home/Hannah/.ssh/ansible_id_rsa

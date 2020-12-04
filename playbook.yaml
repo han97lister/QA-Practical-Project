@@ -1,10 +1,11 @@
-- hosts: manager
+- hosts: master
+  become: true
   roles:
   - docker  
-  - swarm-manager
+  - swarm-master
 
 - hosts: workers
-  become: yes
+  become: true
   roles:
   - docker  
   - swarm-workers
