@@ -1,6 +1,10 @@
 pipeline {
     agent any
     stages {
+        stage('Ansible') {
+            steps {
+                sh "./scripts/ansible.sh"
+            }
         stage('Test') {
             steps {
                 sh "./scripts/test.sh"
