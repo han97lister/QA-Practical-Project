@@ -6,11 +6,12 @@ app = Flask(__name__)
 @app.route('/letters', methods=['GET'])
 def letters():
 
-    uppercase = ["ABC", "DEF", "GHI", "JKL", "MNO"]
-    return  Response(random.choice(uppercase), mimetype="text/plain")
+    #uppercase = ["ABC", "DEF", "GHI", "JKL", "MNO"]
+    #return  Response(random.choice(uppercase), mimetype="text/plain")
         
     #change implement
-    #lowercase = ["xyz"]
+    lowercase = ["xyz", "uvw", "rst"]
+    return  Response(random.choice(lowercase), mimetype="text/plain")
 
 if __name__=="__main__":
     app.run(debug=True, host='0.0.0.0', port=5001)    
