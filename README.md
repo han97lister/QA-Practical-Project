@@ -46,6 +46,15 @@ As you can see I only have the one table but this table stores each ticket with 
 ### **Project Tracking**
 I chose to track my project using Trello and have attached a snapshot below:  
 ![trello][trello]  
+Trello is very useful as it allows you to label your tasks in order to keep a clear methodology whilst working through projects. As this project required 4 services all working together, I thought it would be helpful seperating my tasks into each service and then using my product backlog to keep general tasks needed for all services; in an order that would be efficient in completion. I colour co-orindated my labels with a simple to-do (red), doing (yellow) and done (green) system so that at a quick glance it was clear to gage my progress within the project. In order to follow agile methods, I also included user stories within my trello board. User stories are really useful as they allow you stay focused on the end goal and keep in mind the user's experience throughout.
+
+### **Risk Assessment**
+Risk assessments are essential when completing a project as they allow you to mitigate certain risks and prepare responses for others that me out of your control. Below I have attached a screenshot of the risk assessment I completed and underneath that image is a link to the full version:  
+![risk][risk]  
+https://docs.google.com/spreadsheets/d/1lqB149AnvSHusWHYlMSmQc1Qp5mM6y4bi0fCFFa7N3E/edit?usp=sharing  
+Components of a risk include the cause, event and effect and I have assessed these risks based on the probability of them occuring, the impact they will have and proximity in order to try mitigate risks as much as possible. Once I identified some risks, I was able to strengthen my application by enforcing proposed mitigations assessed earlier on. Therefore, I have included a column in my register in order to document updates I have made throughout my project to combat some risks.  
+
+### **Testing**
 
 
 ### **Author**
@@ -53,3 +62,5 @@ Hannah Lister-Sims
 
 [erd]:https://i.imgur.com/pXvji8l.png?1
 [services]:https://i.imgur.com/QDP3UB6.png
+[trello]:https://i.imgur.com/Spu1E0m.png
+[risk]:https://i.imgur.com/2WIr8rm.png
