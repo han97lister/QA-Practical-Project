@@ -97,7 +97,7 @@ When considering future improvements, I would first look at addressing the known
 * Get an updated test coverage report for my service 1
 * Investigate the issue with the test reports in my Jenkins configuration output
 * Implement tests for the change branch I merged during the presentation demonstration
-* Improve the general visulisation of my application
+* Improve the general visualisation of my application
 * Implement more proposed mitigations that have been addressed in my risk assessment
 
 ### **Author**
