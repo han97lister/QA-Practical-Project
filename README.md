@@ -51,7 +51,7 @@ I have used an Entity Relationship Diagram (ERD) to illustrate the table within 
 As you can see I only have the one table but this table stores each ticket with it's allocated prize and gives it an identity number so that it stays unique. Both the ERD and architecture plans are component diagrams as they describe my project and wiring of some physical components in the system. I found they helped model implementation details and  allowed me to follow the system's structure which was required in order to cover the brief; more so with the architecture plan.  
 
 #### **CI Pipeline**
-
+![pipeline][pipeline]
 
 ### **Project Tracking**
 I chose to track my project using Trello and have attached a snapshot below:  
@@ -108,6 +108,7 @@ Hannah Lister-Sims
 [arch2]:https://i.imgur.com/m2mjZbz.png
 [jenkins]:https://i.imgur.com/i2KZ3eQ.png
 [erd]:https://i.imgur.com/pXvji8l.png?1
+[pipeline]:https://i.imgur.com/vH4xqEa.png
 [services]:https://i.imgur.com/QDP3UB6.png
 [trello]:https://i.imgur.com/Spu1E0m.png
 [risk]:https://i.imgur.com/k9fQUdQ.png
