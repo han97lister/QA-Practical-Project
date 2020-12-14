@@ -110,7 +110,7 @@ Hannah Lister-Sims
 [erd]:https://i.imgur.com/pXvji8l.png?1
 [services]:https://i.imgur.com/QDP3UB6.png
 [trello]:https://i.imgur.com/Spu1E0m.png
-[risk]:https://i.imgur.com/2WIr8rm.png
+[risk]:https://i.imgur.com/k9fQUdQ.png
 [test1]:https://i.imgur.com/96ivknO.png
 [test2]:https://i.imgur.com/lDbn1z1.png
 [test3]:https://i.imgur.com/QU9kWin.png
