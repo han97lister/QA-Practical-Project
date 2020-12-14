@@ -94,6 +94,7 @@ Fortunately, the user has the option to try again for a prize by clicking on the
 
 ### **Future Improvements**
 When considering future improvements, I would first look at addressing the known issues, some of which mentioned previously, and then consider ways in which I could both improve the user experience and update more risks in my risk registry. These would include:  
+* Get an updated test coverage report for my service 1
 * Investigate the issue with the test reports in my Jenkins configuration output
 * Implement tests for the change branch I merged during the presentation demonstration
 * Improve the general visulisation of my application
