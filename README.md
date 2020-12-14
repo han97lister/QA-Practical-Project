@@ -36,7 +36,14 @@ Here is a visual representation of the relationship between my services:
 
 ### **Architecture**
 #### **Architecture Plan**
-Architecture plans are useful as they allow you to initially visualise your end project without going into much detail. As my project progressed, my architecture plan changed slightly and evolved into my final end structure. Below you can see the evolution:    
+Architecture plans are useful as they allow you to initially visualise your end project without going into much detail. As my project progressed, my architecture plan changed slightly and evolved into my final end structure. Below you can see the evolution:  
+![arch1][arch1]  
+Initially I thought my load balancer (NGINX) would be containerised and included within my Docker-Swarm, however, I soon realised it would need to be seperate in order to deligate the user traffic to each machine. Here is an updated plan I created:  
+![arch1-2][arch1-2]  
+After completing this design, I wasn't convinced with the placement of my Jenkins box and thus how it lead to the load balancer. I was happy with my Docker-Swarm image so created a design that would give a clear overview of my architecture:  
+![arch2][arch2]  
+I was pleased with this final architecture plan as it simply shows that the load balancer is used to deal with traffic and balance it between my swarm cluster which are made up of replica nodes that are all created as part of my Jenkins Pipeline. Below is a screenshot of my Jenkins Pipeline successfully deploying my application:  
+![jenkins][jenkins]  
 
 #### **ERD**
 I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.  
@@ -64,7 +71,7 @@ When testing service 2, I didn't use the patch method as I simply tested that my
 As you can see there is only one line of code not accounted for and this is the same issue found with service 1 in terms of preventing 100% test coverage. Therefore, I am happy with this result as it confirms the output of this service is in the correct format.  
 
 Service 3 was very similar to service 2 in terms of testing with the only difference being which list it retrieved data from. Service 3 was responsible for providing numbers to the lottery ticket and so it got data from the url 'get_number' and had a 200 status code response. Below is the screenshot of my pytest coverage report for service 3:  
-![test3][test3]
+![test3][test3]  
 Similar to the previous pytest reports for other applications, I am only not testing the one line of code and so would consider this a fully successful test coverage as it proves my application has no errors and outputs expected data.  
 
 Service 4 required tests for POST requests as this was the application responsible for returning the prize to the user. Therefore, I wanted to test that each possible prize was accounted for depending on the user's ticket and here is the coverage report:  
@@ -87,11 +94,15 @@ When considering future improvements, I would first look at addressing the known
 * Investigate the issue with the test reports in my Jenkins configuration output
 * Implement tests for the change branch I merged during the presentation demonstration
 * Improve the general visulisation of my application
-* Include an email server into my CI Pipeline so that I am sent notifications
+* Implement more proposed mitigations that have been addressed in my risk assessment
 
 ### **Author**
 Hannah Lister-Sims
 
+[arch1]:https://i.imgur.com/SYzcwBi.png
+[arch1-2]:https://i.imgur.com/KlUfYb7.png
+[arch2]:https://i.imgur.com/m2mjZbz.png
+[jenkins]:https://i.imgur.com/i2KZ3eQ.png
 [erd]:https://i.imgur.com/pXvji8l.png?1
 [services]:https://i.imgur.com/QDP3UB6.png
 [trello]:https://i.imgur.com/Spu1E0m.png
