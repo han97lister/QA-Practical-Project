@@ -12,12 +12,12 @@
 * [My Approach](#my-approach)
 * [Architecture](#architecture)
   * [Architecture Plan](#architecture-plan)
+  * [ERD](#erd)
   * [CI Pipeline](#ci-pipeline)
 * [Project Tracking](#project-tracking)
 * [Risk Assessment](#risk-assessment)
 * [Testing](#testing)
 * [Front-end Design](#front-end-design)
-  * [Known Issues](#known-issues)
 * [Future Improvements](#future-improvements)
 * [Author](#author)
 
@@ -55,7 +55,39 @@ https://docs.google.com/spreadsheets/d/1lqB149AnvSHusWHYlMSmQc1Qp5mM6y4bi0fCFFa7
 Components of a risk include the cause, event and effect and I have assessed these risks based on the probability of them occuring, the impact they will have and proximity in order to try mitigate risks as much as possible. Once I identified some risks, I was able to strengthen my application by enforcing proposed mitigations assessed earlier on. Therefore, I have included a column in my register in order to document updates I have made throughout my project to combat some risks.  
 
 ### **Testing**
+I completed unit-tests using Pytest and I did this for each service. These tests were written so that I knew each application was created and thus outputted what I expected. For service 1, I used the unittest mock method called patch. This allowed me to adjust the functionality of my app for testing purposes by allowing mock responses. For example, I was able input a return value for both the GET and POST requests my application completed and the correct response for that data. Here is the coverage report for my service 1 application:  
+![test1][test1]  
+This is a snapshot of the pytest I completed when my application code was all within the app.py file and the line not accounted for is the code "if __name__=='__main__':" which I am unable to test for. Therefore, in terms of my service 1 app I have gained 100% successful coverage for what I expect the app to do and display for users. Since I have developed my application further by connecting a Mysql database, the structure of this application has changed. However, as I was able to deploy my whole application through Gunicorn in Jenkins, Jenkins completed this same test with the correct file structure and thus coverage.  
 
+When testing service 2, I didn't use the patch method as I simply tested that my app retrieved letters from the list provided in the url 'letters' and responsed with a 200 status code which would mean it had no errors. Here is a snapshot of the pytest result:  
+![test2][test2]  
+As you can see there is only one line of code not accounted for and this is the same issue found with service 1 in terms of preventing 100% test coverage. Therefore, I am happy with this result as it confirms the output of this service is in the correct format.  
+
+Service 3 was very similar to service 2 in terms of testing with the only difference being which list it retrieved data from. Service 3 was responsible for providing numbers to the lottery ticket and so it got data from the url 'get_number' and had a 200 status code response. Below is the screenshot of my pytest coverage report for service 3:  
+![test3][test3]
+Similar to the previous pytest reports for other applications, I am only not testing the one line of code and so would consider this a fully successful test coverage as it proves my application has no errors and outputs expected data.  
+
+Service 4 required tests for POST requests as this was the application responsible for returning the prize to the user. Therefore, I wanted to test that each possible prize was accounted for depending on the user's ticket and here is the coverage report:  
+![test4][test4]  
+This report has the same missing term for tests as the other services but looking past that, it is clear my appliation outputs what I expect with no errors.  
+
+Initially, I ran these tests in my virtual machine and gained a coverage report in order to monitor the success; as my project progressed I was then able to containerise these tests have Jenkins run them and report the results in the configuration analysis, however when I analysed this it did not show what I expected or the high coverage I have shown above. The reason for this is unknown to me and so I would definitely like to look into this in the future.
+
+### **Front-end Design**
+To help you visulise my application, I have included screenshots of it functioning with the full deployment pipeline automated through Jenkins. This design meets the minimum requirements for this project, however I would definitely like to improve the HTML features in order to have the application looking more applealing for the user. Here is a screenshot of the application where the user would be awarded the highest prize offered:  
+![prize1][prize1]  
+Here is a screenshot of another lottery ticket example with a different prize awarded:  
+![prize2][prize2]  
+Finally, here is a screenshot of a lottery ticket where the user unfortunately wins nothing:  
+![prize3][prize3]  
+Fortunately, the user has the option to try again for a prize by clicking on the refresh button. The refresh button will output a different lottery ticket and potentially a different prize!
+
+### **Future Improvements**
+When considering future improvements, I would first look at addressing the known issues, some of which mentioned previously, and then consider ways in which I could both improve the user experience and update more risks in my risk registry. These would include:  
+* Investigate the issue with the test reports in my Jenkins configuration output
+* Implement tests for the change branch I merged during the presentation demonstration
+* Improve the general visulisation of my application
+* Include an email server into my CI Pipeline so that I am sent notifications
 
 ### **Author**
 Hannah Lister-Sims
@@ -64,3 +96,10 @@ Hannah Lister-Sims
 [services]:https://i.imgur.com/QDP3UB6.png
 [trello]:https://i.imgur.com/Spu1E0m.png
 [risk]:https://i.imgur.com/2WIr8rm.png
+[test1]:https://i.imgur.com/96ivknO.png
+[test2]:https://i.imgur.com/lDbn1z1.png
+[test3]:https://i.imgur.com/QU9kWin.png
+[test4]:https://i.imgur.com/IEjREsv.png
+[prize1]:https://i.imgur.com/eo207Px.png
+[prize2]:https://i.imgur.com/neD0Unz.png
+[prize3]:https://i.imgur.com/MtT6b8U.png
