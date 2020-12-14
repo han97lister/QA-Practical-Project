@@ -3,7 +3,7 @@
 
 ### **Resources**
 
-* Presentation:
+* Presentation:https://docs.google.com/presentation/d/1D65X0vpuTH9zxYbYdAl5xAJa0of29-zs--0AziOe0J0/edit#slide=id.gb138c8473f_0_57
 * Trello Board:https://trello.com/b/JbWnQiQF/qa-practical-project
 * Website: 
 
@@ -49,6 +49,9 @@ I was pleased with this final architecture plan as it simply shows that the load
 I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.  
 ![erd][erd]  
 As you can see I only have the one table but this table stores each ticket with it's allocated prize and gives it an identity number so that it stays unique. Both the ERD and architecture plans are component diagrams as they describe my project and wiring of some physical components in the system. I found they helped model implementation details and  allowed me to follow the system's structure which was required in order to cover the brief; more so with the architecture plan.  
+
+#### **CI Pipeline**
+
 
 ### **Project Tracking**
 I chose to track my project using Trello and have attached a snapshot below:  
