@@ -32,7 +32,9 @@ The second service generates a random object which is the first half of the user
 The fourth service takes both get and post requests as it creates an object based upon the results of service 2 and 3. Once it has received the lottery ticket from service 1, it will allocate a prize and post the object back to service 1 for the user to see.  
 
 Here is a visual representation of the relationship between my services:  
-![services][services]
+![services][services]  
+
+As part of the minimum requirement, I needed to demonstrate a change in all four services and these 
 
 ### **Architecture**
 #### **Architecture Plan**
