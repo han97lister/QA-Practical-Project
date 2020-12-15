@@ -38,7 +38,7 @@ As part of the minimum requirement, I needed to demonstrate a change in all four
 * Service 1: Change the name - Special number addition
 * Service 2: Change to lowercase letters
 * Service 3: Random special number
-* Service 4: A lot bigger prizes on offer, depending on the special number    
+* Service 4: A lot bigger prizes on offer, depending on the special number   
 These changes will not be made manually, instead using Webhooks which automatically start to rebuild and deploy an application once a commit is made to my repository. This allows my app to be edited whilst constantly staying live for users.
 
 ### **Architecture**
