@@ -5,7 +5,7 @@
 
 * Presentation:https://docs.google.com/presentation/d/1D65X0vpuTH9zxYbYdAl5xAJa0of29-zs--0AziOe0J0/edit#slide=id.gb138c8473f_0_57
 * Trello Board:https://trello.com/b/JbWnQiQF/qa-practical-project
-* Website: 
+* Website:http://35.246.121.215:5000
 
 ### **Contents**
 * [Brief](#brief)
@@ -34,7 +34,12 @@ The fourth service takes both get and post requests as it creates an object base
 Here is a visual representation of the relationship between my services:  
 ![services][services]  
 
-As part of the minimum requirement, I needed to demonstrate a change in all four services and these 
+As part of the minimum requirement, I needed to demonstrate a change in all four services and for this I decided:  
+* Service 1: Change the name - Special number addition
+* Service 2: Change to lowercase letters
+* Service 3: Random special number
+* Service 4: A lot bigger prizes on offer, depending on the special number    
+These changes will not be made manually, instead using Webhooks which automatically start to rebuild and deploy an application once a commit is made to my repository. This allows my app to be edited whilst constantly staying live for users.
 
 ### **Architecture**
 #### **Architecture Plan**
@@ -53,7 +58,8 @@ I have used an Entity Relationship Diagram (ERD) to illustrate the table within 
 As you can see I only have the one table but this table stores each ticket with it's allocated prize and gives it an identity number so that it stays unique. Both the ERD and architecture plans are component diagrams as they describe my project and wiring of some physical components in the system. I found they helped model implementation details and  allowed me to follow the system's structure which was required in order to cover the brief; more so with the architecture plan.  
 
 #### **CI Pipeline**
-![pipeline][pipeline]
+Continuous Integration is code being automatically built once committed to a repository and the Pipeline is simply the route it takes as part of this process. Below is the CI Pipeline I used for my project:   
+![pipeline][pipeline]  
 
 ### **Project Tracking**
 I chose to track my project using Trello and have attached a snapshot below:  
