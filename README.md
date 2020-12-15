@@ -14,6 +14,7 @@
   * [Architecture Plan](#architecture-plan)
   * [ERD](#erd)
   * [CI Pipeline](#ci-pipeline)
+* [Jenkins](#jenkins)
 * [Project Tracking](#project-tracking)
 * [Risk Assessment](#risk-assessment)
 * [Testing](#testing)
@@ -51,6 +52,7 @@ After completing this design, I wasn't convinced with the placement of my Jenkin
 ![arch2][arch2]  
 I was pleased with this final architecture plan as it simply shows that the load balancer is used to deal with traffic and balance it between my swarm cluster which are made up of replica nodes that are all created as part of my Jenkins Pipeline. Below is a screenshot of my Jenkins Pipeline successfully deploying my application:  
 ![jenkins][jenkins]  
+I discuss the stages of this pipeline in more detail under the section Jenkins.
 
 #### **ERD**
 I have used an Entity Relationship Diagram (ERD) to illustrate the table within my database.  
@@ -60,6 +62,11 @@ As you can see I only have the one table but this table stores each ticket with 
 #### **CI Pipeline**
 Continuous Integration is code being automatically built once committed to a repository and the Pipeline is simply the route it takes as part of this process. Below is the CI Pipeline I used for my project:   
 ![pipeline][pipeline]  
+
+### **Jenkins**
+Here are screenshots of my application being deployed using Jenkins:  
+![jenkins1][jenkins1]  
+In order to achieve automated build with no further configurations, I required a Jenkins Pipeline that was shown under architecure plans. In order to do this, I needed a Jenkinsfile that committed to my source control. My Jenkinsfile was made up of commands that excuted scripts named: Ansible, Test, Build, Push and Deploy. **Ansible** allowed Jenkins to install all the dependencies I needed for my application to run. To do this, I created an ansible playbook where I outlined hosts and tasks, an inventory which defined hosts in my infrastructure, and I used roles to prevent repetition within clusters and ansible. The **build** stage of my Jenkinsfile included a script that built my docker-compose yaml file. This is where Docker built images for each service using the Dockerfile in each folder. It also allowed for other variables such as ports, my service 1 connecting to my database environment, and where I can deploy multiple replicas so that my app is stacked ready for high volumes of traffic. Once my docker-compose yaml is built, docker-compose **pushes** the images to dockerhub which allows for me to use Docker Swarm to deploy my application into the swarm cluster. To do this, I needed to SSH into my swarm-manager, clone down the repository from Github, pull the images and **deploy** into the swarm and this was all commanded from the deploy script executed in the Jenkinsfile.
 
 ### **Project Tracking**
 I chose to track my project using Trello and have attached a snapshot below:  
@@ -111,13 +118,14 @@ When considering future improvements, I would first look at addressing the known
 ### **Author**
 Hannah Lister-Sims
 
+[services]:https://i.imgur.com/QDP3UB6.png
 [arch1]:https://i.imgur.com/SYzcwBi.png
 [arch1-2]:https://i.imgur.com/KlUfYb7.png
 [arch2]:https://i.imgur.com/m2mjZbz.png
 [jenkins]:https://i.imgur.com/i2KZ3eQ.png
 [erd]:https://i.imgur.com/pXvji8l.png?1
 [pipeline]:https://i.imgur.com/vH4xqEa.png
-[services]:https://i.imgur.com/QDP3UB6.png
+[jenkins1]:https://i.imgur.com/L2pooGU.png
 [trello]:https://i.imgur.com/Spu1E0m.png
 [risk]:https://i.imgur.com/k9fQUdQ.png
 [test1]:https://i.imgur.com/96ivknO.png
